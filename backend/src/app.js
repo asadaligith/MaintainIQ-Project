@@ -14,7 +14,7 @@ const { notFoundHandler, globalErrorHandler } = require('./middleware/errorHandl
 const swaggerSpec = require('./docs/swagger');
 
 const app = express();
-
+app.set("trust proxy", 1);
 // 1. HTTP Security and Logging Headers
 app.use(helmet({
   contentSecurityPolicy: false // Disable CSP for Swagger docs styling compatibility
